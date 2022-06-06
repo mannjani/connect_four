@@ -1,0 +1,24 @@
+<div class="row">
+    <div class="column column-50 column-offset-25">
+        <h1>Log In</h1>
+        <%= form_for @changeset, @action, [as: :user], fn f-> %>
+        <%= label f, :username, "Username" %>
+        <%= text_input f, :username %>
+        <%= error_tag f, :username %>
+
+        <%= label f, :password, "Password" %>
+        <%= password_input f, :password %>
+        <%= error_tag f, :password %>
+
+        <%= submit "Log In", class: "button button-primary" %>
+        <% end %>
+    </div>
+</div>
+<div class="row">
+    <div class="column column-50 column-offset-25">
+        <p>
+            Need an account?
+            <%= link("Register here", to: Routes.registration_path(@conn, :new)) %>
+        </p>
+    </div>
+</div>
